@@ -1,0 +1,83 @@
+/* Pedro's operations and finance edition. Keep data and action behavior intact. */
+.dashboard-app {
+  --navy: #15263f;
+  --ink: #20324b;
+  --muted: #5c6b80;
+  --teal: #315da8;
+  --teal-dark: #254980;
+  --mint: #edf2fc;
+  --canvas: #f4f6fa;
+  --border: #dce2ec;
+  background: var(--canvas);
+}
+.dashboard-app .topbar { background: #15263f; border-right-color: #253c5b; }
+.dashboard-app .brand-symbol { color: #b9d2ff; }
+.dashboard-app .top-nav > button[aria-current="page"] {
+  background: #2a4266; border-color: #536d95; color: #fff;
+}
+.dashboard-app .top-nav > button:hover,
+.dashboard-app .top-nav > a:hover { background: #243b5b; }
+.dashboard-app .sidebar-section-label { color: #b2c3dd; font-size: 10px; }
+.dashboard-app .topbar .copy-button { background: #243b5b; border-color: #536d95; color: #fff; }
+.dashboard-app .dashboard-shell { padding: 0 28px 24px; }
+.dashboard-app .dashboard-shell .lab-toolbar { margin: 0 -28px; padding: 12px 28px; }
+.desk-intro { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 0 22px; }
+.desk-intro .eyebrow { color: #4c6485; font-size: 10px; letter-spacing: 1.6px; }
+.desk-purpose { margin-top: 5px; color: var(--muted); font-size: 13px; }
+.desk-journey { display: flex; gap: 10px; color: #4c6485; font-size: 11px; white-space: nowrap; }
+.dashboard-app .dashboard-shell .overview { gap: 18px; }
+.dashboard-app .dashboard-shell .section-heading h2 { font-size: 28px; letter-spacing: -1px; }
+.dashboard-app .dashboard-shell #view-level { display: block; margin-bottom: 6px; color: #566d8e; font-size: 10px; }
+.dashboard-app .dashboard-shell .date-chip { color: var(--muted); }
+.dashboard-app .dashboard-shell .metric { min-height: 122px; padding: 18px; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 3px 12px #1c355507; }
+.dashboard-app .dashboard-shell .metric > p { font-size: 12px; font-weight: 600; color: #4c5f79; }
+.dashboard-app .dashboard-shell .metric > strong { margin: 9px 0 7px; font-size: 34px; font-variant-numeric: tabular-nums; color: var(--ink); }
+.dashboard-app .dashboard-shell .metric > span { display: block; color: #5c6b80; font-size: 11px; line-height: 1.5; }
+.dashboard-app .dashboard-shell .metric .context-dots { color: #526986; }
+.dashboard-app .dashboard-shell .metric-attention { background: #fff9ef; border-color: #e8d5ad; }
+.dashboard-app .dashboard-shell .panel { border-radius: 12px; border-color: var(--border); }
+.dashboard-app .dashboard-shell .panel-heading { padding: 18px; }
+.dashboard-app .dashboard-shell .panel-heading .eyebrow { display: block; font-size: 9px; color: #566d8e; margin-bottom: 5px; }
+.dashboard-app .dashboard-shell .region-chart { padding: 0 18px 16px; gap: 5px; }
+.dashboard-app .dashboard-shell button.region-row,
+.dashboard-app .dashboard-shell button.chart-row { min-height: 42px; }
+.dashboard-app .bar-track { background: #edf1f7; height: 10px; }
+.dashboard-app .dashboard-shell .bar-fill { background: #315da8; border-radius: 3px; }
+.dashboard-app .dashboard-shell .bar-fill.negative { background: #a3443c; }
+.dashboard-app .dashboard-shell .insight-callout { padding: 16px; background: #edf2fc; border-color: #cbd9f0; border-left-color: #315da8; }
+.dashboard-app .dashboard-shell .insight-callout #case-summary { display: block; font-size: 11px; line-height: 1.65; margin-top: 6px; color: #465c7a; }
+.dashboard-app .dashboard-shell .insight-callout h3 { font-size: 14px; }
+.dashboard-app .dashboard-shell .signal-tile { min-height: 80px; padding: 12px; }
+.dashboard-app .dashboard-shell .orders-panel .panel-heading { padding: 16px 18px; }
+.dashboard-app .dashboard-shell .orders-panel td { height: 48px; padding: 8px 18px; }
+.dashboard-app .dashboard-shell .orders-panel th { padding: 10px 18px; color: #52627a; background: #f6f8fc; }
+.dashboard-app .dashboard-shell .workspace-grid { margin-bottom: 18px; }
+.dashboard-app .dashboard-shell[data-level="segment"] .workspace-grid { grid-template-columns: 310px minmax(0, 1fr); }
+.dashboard-app .dashboard-shell #segment-view > .segment-banner { background: #edf2fc; border-color: #cbd9f0; padding: 20px; }
+.dashboard-app .dashboard-shell .detail-panel { padding: 24px; }
+.metric-guide { margin: 0 0 16px; border: 1px solid var(--border); border-radius: 10px; background: #fff; padding: 13px 18px; font-size: 12px; }
+.metric-guide summary { cursor: pointer; color: #3b5273; font-weight: 600; }
+.metric-guide-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding-top: 16px; }
+.metric-guide-grid p { color: var(--muted); line-height: 1.7; }
+.metric-guide-grid strong { display: block; color: var(--ink); margin-bottom: 4px; }
+.metric-guide-note { padding-top: 14px; margin-top: 14px; border-top: 1px solid var(--border); color: var(--muted); line-height: 1.7; }
+.dashboard-app .dashboard-shell .page-footer { color: #5c6b80; }
+@media (max-width: 1100px) {
+  .desk-intro { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .dashboard-app .dashboard-shell[data-level="segment"] .workspace-grid { grid-template-columns: 260px minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .dashboard-app .dashboard-shell { padding: 0 14px 18px; }
+  .dashboard-app .dashboard-shell .lab-toolbar { margin: 0 -14px; padding: 12px 14px; flex-wrap: wrap; gap: 10px; }
+  .desk-intro { padding: 20px 0; }
+  .desk-journey { gap: 7px; font-size: 10px; }
+  .dashboard-app .dashboard-shell .section-heading h2 { font-size: 23px; }
+  .dashboard-app .dashboard-shell .metric { min-height: 116px; padding: 14px; }
+  .dashboard-app .dashboard-shell .metric > strong { font-size: 29px; }
+  .dashboard-app .dashboard-shell[data-level="segment"] .workspace-grid { grid-template-columns: 1fr; }
+  .metric-guide-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .dashboard-app .dashboard-shell .insight-callout { flex-direction: column; align-items: flex-start; }
+  .dashboard-app .dashboard-shell .insight-callout .button { max-width: none; padding-left: 0; }
+  .dashboard-app .dashboard-shell .signal-tile { min-height: 70px; }
+}
+

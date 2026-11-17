@@ -8,8 +8,9 @@
       content="Explore a three-level retail dashboard, investigate a segment and take reviewed actions from real data."
     />
     <meta name="color-scheme" content="light" />
-    <title>Northstar · Action Lab</title>
+    <title>Northstar Retail · Performance Desk</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./business.css" />
     <script src="./app.js" defer></script>
   </head>
   <body class="dashboard-app">
@@ -18,14 +19,14 @@
       <a
         class="brand"
         href="./index.html"
-        aria-label="Northstar Action Lab home"
+        aria-label="Northstar Retail Performance Desk home"
         ><span class="brand-symbol" aria-hidden="true">✳︎</span
         ><span
           >northstar<span class="brand-divider">/</span
-          ><span class="brand-lab">action lab</span></span
+          ><span class="brand-lab">performance desk</span></span
         ></a
       >
-      <p class="sidebar-section-label">Retail operations</p>
+      <p class="sidebar-section-label">Operations &amp; finance</p>
       <nav class="top-nav" aria-label="Main navigation">
         <button id="nav-overview" type="button" aria-current="page">
           Overview
@@ -39,10 +40,10 @@
       </nav>
       <a
         class="button copy-button"
-        href="https://github.com/josncmar/ie-apps-action-lab"
+        href="https://github.com/pedrofernandezgarmendia/ie-apps-action-lab"
         target="_blank"
         rel="noopener noreferrer"
-        >Get your own copy ↗</a
+        >Pedro’s project ↗</a
       >
     </header>
     <main id="main" class="page-shell dashboard-shell">
@@ -81,6 +82,11 @@
           </p>
         </details>
       </section>
+      <div class="desk-intro">
+        <div><p class="eyebrow">PEDRO FERNANDEZ · RETAIL INTELLIGENCE</p>
+          <p class="desk-purpose">Turn operating signals into informed decisions.</p></div>
+        <p class="desk-journey" aria-label="Analysis workflow"><span>01 Overview</span><span aria-hidden="true">→</span><span>02 Segment</span><span aria-hidden="true">→</span><span>03 Order detail</span></p>
+      </div>
       <nav
         id="breadcrumbs"
         class="breadcrumbs"
@@ -91,7 +97,7 @@
         <div class="section-heading">
           <div>
             <p id="view-level" class="eyebrow">LEVEL 01 · OVERVIEW</p>
-            <h2 id="view-title" tabindex="-1">Operations overview</h2>
+            <h2 id="view-title" tabindex="-1">Operating performance</h2>
           </div>
           <div class="date-chip">
             Snapshot
@@ -157,7 +163,7 @@
             ><span id="metric-order-note">All channels and regions</span>
           </article>
           <article class="metric metric-attention">
-            <p>Need a closer look ↗</p>
+            <p>Orders requiring review</p>
             <strong id="metric-attention">—</strong
             ><span>Orders with at least one signal</span>
           </article>
@@ -267,7 +273,7 @@
               <thead>
                 <tr>
                   <th scope="col">Order / product</th>
-                  <th scope="col">Net sales</th>
+                  <th scope="col">Net revenue</th>
                   <th scope="col">Margin</th>
                   <th scope="col">Signal</th>
                   <th scope="col"><span class="sr-only">Details</span></th>
@@ -294,6 +300,16 @@
           hidden
         ></aside>
       </section>
+      <details class="metric-guide">
+        <summary>How to read these figures</summary>
+        <div class="metric-guide-grid">
+          <p><strong>Net revenue</strong>Revenue − refunds.</p>
+          <p><strong>Contribution</strong>Revenue − refunds − product cost.</p>
+          <p><strong>Margin</strong>Contribution ÷ net revenue, when net revenue is positive.</p>
+          <p><strong>Orders requiring review</strong>Distinct orders with one or more signals. An order is counted once even when signals overlap.</p>
+        </div>
+        <p class="metric-guide-note">All figures follow the selected scope and the fixed 17 November 2026 snapshot. Signals prompt investigation; confirm the source evidence before correcting a value.</p>
+      </details>
       <details id="history" class="panel history-panel">
         <summary class="history-summary">
           <span>Action activity</span
@@ -471,3 +487,4 @@
     <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   </body>
 </html>
+

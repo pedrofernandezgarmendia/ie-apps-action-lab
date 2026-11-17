@@ -1016,7 +1016,7 @@
     text(
       "#view-title",
       state.level === "overview"
-        ? "Operations overview"
+        ? "Operating performance"
         : state.level === "segment"
           ? scopeLabel()
           : "Order detail",
@@ -2089,3 +2089,4 @@
   }
   start();
 })();
+
